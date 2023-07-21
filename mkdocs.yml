@@ -1,11 +1,10 @@
-site_name: cookiecutter-poetry
-repo_url: https://github.com/fpgmaas/cookiecutter-poetry
-site_url: https://fpgmaas.github.io/cookiecutter-poetry
+site_name: cookiecutter-pyproject
+repo_url: https://github.com/BrandonDing/cookiecutter-pyproject
+site_url: https://BrandonDing.github.io/cookiecutter-pyproject
 site_description: A cookiecutter template for Python projects that use Poetry for its dependency management
-site_author: Florian Maas
+site_author: Brandon Ding
 edit_uri: edit/main/docs/
-repo_name: fpgmaas/cookiecutter-poetry
-copyright: Maintained by <a href="https://fpgmaas.com">Florian</a>.
+repo_name: BrandonDing/cookiecutter-pyproject
 
 nav:
   - Home: index.md
@@ -49,9 +48,9 @@ theme:
 extra:
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/fpgmaas/cookiecutter-poetry
+      link: https://github.com/BrandonDing/cookiecutter-pyproject
     - icon: fontawesome/brands/python
-      link: https://pypi.org/project/cookiecutter-poetry/
+      link: https://pypi.org/project/cookiecutter-pyproject/
 markdown_extensions:
   - toc:
       permalink: true

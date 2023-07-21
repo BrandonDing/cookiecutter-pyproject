@@ -7,19 +7,19 @@ bake-with-inputs: ## bake with inputs and overwrite if exists.
 	@cookiecutter . --overwrite-if-exists
 
 .PHONY: bake-and-test-deploy
-bake-and-test-deploy: ## For quick publishing to cookiecutter-poetry-example to test GH Actions
-	@rm -rf cookiecutter-poetry-example || true
+bake-and-test-deploy: ## For quick publishing to cookiecutter-pyproject-example to test GH Actions
+	@rm -rf cookiecutter-pyproject-example || true
 	@cookiecutter --no-input . --overwrite-if-exists \
-		author="Florian Maas" \
-		email="fpgmaas@gmail.com" \
-		github_author_handle=fpgmaas \
-		project_name=cookiecutter-poetry-example \
-		project_slug=cookiecutter_poetry_example 
-	@cd cookiecutter-poetry-example; poetry lock && \
+		author="Brandon Ding" \
+		email="dingshangjin@163.com" \
+		github_author_handle=BrandonDing \
+		project_name=cookiecutter-pyproject-example \
+		project_slug=cookiecutter_pyproject_example 
+	@cd cookiecutter-pyproject-example; poetry lock && \
 		git init -b main && \
 		git add . && \
 		git commit -m "init commit" && \
-		git remote add origin git@github.com:fpgmaas/cookiecutter-poetry-example.git && \
+		git remote add origin git@github.com:BrandonDing/cookiecutter-pyproject-example.git && \
 		git push -f origin main
 
 
@@ -36,7 +36,7 @@ check: ## Run code quality tools.
 	@echo "🚀 Linting code: Running pre-commit"
 	@poetry run pre-commit run -a
 	@echo "🚀 Linting with ruff"
-	@poetry run ruff hooks tests cookiecutter_poetry --config pyproject.toml
+	@poetry run ruff hooks tests cookiecutter_pyproject --config pyproject.toml
 	@echo "🚀 Static type checking: Running mypy"
 	@poetry run mypy
 	@echo "🚀 Checking for obsolete dependencies: Running deptry"

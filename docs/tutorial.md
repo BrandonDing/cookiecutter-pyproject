@@ -40,11 +40,11 @@ Replacing `3.9.7` with a version of your choosing.
 ## Step 3: Generate your project
 
 First, navigate to the directory in which you want the project to be
-created. Then, we need to install `cookiecutter-poetry` with the
+created. Then, we need to install `cookiecutter-pyproject` with the
 following command:
 
 ``` bash
-pip install cookiecutter-poetry
+pip install cookiecutter-pyproject
 ```
 
 Within the directory in which you want to create your project, run:
@@ -61,8 +61,8 @@ directly pass the URL to Github repository to the `cookiecutter`
 command:
 
 ``` bash
-pip install cookiecutter-poetry
-cookiecutter https://github.com/fpgmaas/cookiecutter-poetry.git
+pip install cookiecutter-pyproject
+cookiecutter https://github.com/BrandonDing/cookiecutter-pyproject.git
 ```
 
 ## Step 4: Set up your Github repository

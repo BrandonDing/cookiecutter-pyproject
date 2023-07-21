@@ -12,6 +12,7 @@ def foo() -> str:
 
     return "foo"
 
+# TODO: CALL dynaconf and loguru to test functions
 
 if __name__ == "__main__":  # pragma: no cover
     pass

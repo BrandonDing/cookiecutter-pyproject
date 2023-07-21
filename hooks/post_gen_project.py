@@ -31,3 +31,15 @@ if __name__ == "__main__":
         remove_file("codecov.yaml")
         if "{{cookiecutter.include_github_actions}}" == "y":
             remove_file(".github/workflows/validate-codecov-config.yml")
+
+    if "{{cookiecutter.devcontainer}}" == "none":
+        remove_dir(".devcontainer")
+    elif "{{cookiecutter.devcontainer}}" == "python":
+        remove_file(".devcontainer/Dockerfile")
+        remove_file(".devcontainer/docker-compose.yml")
+
+    if "{{cookiecutter.configuration}}" == "n":
+        remove_file("settings.yaml")
+        if "{{cookiecutter.logging}}" == "none":
+            remove_file("{{cookiecutter.project_slug}}/utils.py")
+            remove_file("tests/test_utils.py")

@@ -101,7 +101,7 @@ exclude = [
 
 # deptry
 
-[deptry](https://github.com/fpgmaas/deptry) is used to check the code for dependency issues, and it's configuration and can be edited in `pyproject.toml`.
+[deptry](https://github.com/BrandonDing/deptry) is used to check the code for dependency issues, and it's configuration and can be edited in `pyproject.toml`.
 
 ```toml
 [tool.mypy]

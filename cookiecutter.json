@@ -1,15 +1,18 @@
 {
-    "author": "Florian Maas",
-    "email": "fpgmaas@gmail.com",
-    "author_github_handle" : "fpgmaas",
+    "author": "Brandon Ding",
+    "email": "dingshangjin@163.com",
+    "author_github_handle" : "BrandonDing",
     "project_name": "example-project",
     "project_slug": "{{cookiecutter.project_name|lower|replace('-', '_')}}",
-    "project_description": "This is a template repository for Python projects that use Poetry for their dependency management.",
+    "project_description": "This is a template repository for Python projects that use Poetry for their dependency management and DevContainer for devlopment environment.",
     "include_github_actions": ["y","n"],
     "publish_to": ["pypi", "artifactory", "none"],
     "deptry": ["y", "n"],
     "mkdocs": ["y", "n"],
     "codecov" : ["y","n"],
     "dockerfile" : ["y","n"],
+    "devcontainer": ["python","python and postgres", "none"],
+    "logging": ["loguru","logging", "none"],
+    "configuration": ["y","n"],
     "open_source_license": ["MIT license", "BSD license", "ISC license", "Apache Software License 2.0", "GNU General Public License v3", "Not open source"]
 }
