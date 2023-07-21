@@ -35,7 +35,6 @@ if __name__ == "__main__":
     if "{{cookiecutter.devcontainer}}" == "none":
         remove_dir(".devcontainer")
     elif "{{cookiecutter.devcontainer}}" == "python":
-        remove_file(".devcontainer/Dockerfile")
         remove_file(".devcontainer/docker-compose.yml")
 
     if "{{cookiecutter.configuration}}" == "n":
