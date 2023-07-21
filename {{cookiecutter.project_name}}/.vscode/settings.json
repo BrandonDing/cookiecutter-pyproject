@@ -1,0 +1,11 @@
+{
+    "editor.fontLigatures": false,
+    "editor.fontFamily": "'Fira Code Retina',Consolas, 'Courier New', monospace",
+    "terminal.integrated.fontFamily": "'Cascadia Mono','Courier New'",
+    "terminal.integrated.fontSize": 15,
+    "editor.fontSize": 15,
+    "code-runner.executorMap": {
+        "python": "`poetry env info --executable` -u",
+        "shellscript": "zsh",
+    }
+}
