@@ -12,7 +12,12 @@ packages = [
 
 [tool.poetry.dependencies]
 python = ">=3.8,<4.0"
-
+{% if cookiecutter.configuration == 'y' -%}
+dynaconf = "^3.2.0"
+{% endif -%}
+{% if cookiecutter.logging == 'y' -%}
+loguru = "^0.7.0"
+{% endif %}
 [tool.poetry.group.dev.dependencies]
 pytest = "^7.2.0"
 {% if cookiecutter.codecov == 'y' -%}

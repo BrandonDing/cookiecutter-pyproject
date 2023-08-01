@@ -28,10 +28,11 @@
 				"bungcip.better-toml",
 				"njpwerner.autodocstring",
 				"formulahendry.code-runner",
-				"eamodio.gitlens"
+				"eamodio.gitlens",
+				"ms-ceintl.vscode-language-pack-zh-hans"
 			]
 		}
-	},
+	}
 
 	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
 	// "remoteUser": "root"
@@ -69,7 +70,7 @@
 				"eamodio.gitlens"
 			]
 		}
-	},
+	}
 
 	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
 	// "remoteUser": "root"
@@ -103,7 +104,7 @@
 				"eamodio.gitlens"
 			]
 		}
-	},
+	}
 
 	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
 	// "remoteUser": "root"

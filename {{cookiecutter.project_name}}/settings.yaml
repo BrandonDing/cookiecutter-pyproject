@@ -1,0 +1,2 @@
+env: dev
+log_path: logs/{{cookiecutter.project_slug}}.log
