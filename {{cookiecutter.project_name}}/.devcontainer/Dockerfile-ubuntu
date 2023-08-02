@@ -1,0 +1,55 @@
+FROM ubuntu:22.04
+
+ENV DEBIAN_FRONTEND noninteractive
+
+# Install dependencies.
+RUN apt-get update \
+  && apt-get install -y --no-install-recommends \
+    make \
+    build-essential \
+    libssl-dev \
+    zlib1g-dev \
+    libbz2-dev \
+    libreadline-dev \
+    libsqlite3-dev \
+    wget \
+    curl \
+    llvm \
+    libncurses5-dev \
+    xz-utils \
+    tk-dev \
+    libxml2-dev \
+    libxmlsec1-dev \
+    git \
+    ca-certificates \
+    libffi-dev \
+    liblzma-dev \
+    zsh \
+  && apt-get clean autoclean \
+  && apt-get autoremove -y \
+  && rm -rf /var/lib/apt/lists/* \
+  && rm -f /var/cache/apt/archives/*.deb
+
+# Install ``pyenv`` and ``on my zsh``.
+RUN git clone https://github.com/pyenv/pyenv /root/.pyenv \
+  && sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)" \
+  && chsh -s $(which zsh)
+
+# Install the desired versions of Python.
+RUN for PYTHON_VERSION in 3.8.17 3.9.17 3.10.12 3.11.4; do \
+  set -ex \
+    && /root/.pyenv/bin/pyenv install ${PYTHON_VERSION} \
+    && /root/.pyenv/versions/${PYTHON_VERSION}/bin/python -m pip install --upgrade pip \
+  ; done \
+  && curl -sSL https://install.python-poetry.org | /root/.pyenv/versions/3.11.4/bin/python3 - \
+  && git config --global user.email "{{cookiecutter.email}}" \
+  && git config --global user.name "{{cookiecutter.author}}"
+
+# Add to PATH, in order of lowest precedence to highest.
+ENV PATH /root/.pyenv/versions/3.8.17/bin:${PATH}
+ENV PATH /root/.pyenv/versions/3.9.17/bin:${PATH}
+ENV PATH /root/.pyenv/versions/3.10.12/bin:${PATH}
+ENV PATH /root/.pyenv/versions/3.11.4/bin:${PATH}
+ENV PATH /root/.local/bin:${PATH}
+
+CMD ["python3.11"]

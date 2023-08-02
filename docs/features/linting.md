@@ -99,26 +99,6 @@ exclude = [
 ]
 ```
 
-# deptry
-
-[deptry](https://github.com/BrandonDing/deptry) is used to check the code for dependency issues, and it's configuration and can be edited in `pyproject.toml`.
-
-```toml
-[tool.mypy]
-disallow_untyped_defs = "True"
-disallow_any_unimported = "True"
-no_implicit_optional = "True"
-check_untyped_defs = "True"
-warn_return_any = "True"
-warn_unused_ignores = "True"
-show_error_codes = "True"
-exclude = [
-    '\.venv',
-    '{{cookiecutter.project_name}}',
-    'tests'
-]
-```
-
 ## Github Actions
 
 If `include_github_actions` is set to `"y"`, code formatting is checked

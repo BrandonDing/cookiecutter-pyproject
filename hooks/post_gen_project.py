@@ -13,6 +13,10 @@ def remove_dir(filepath: str) -> None:
     shutil.rmtree(os.path.join(PROJECT_DIRECTORY, filepath))
 
 
+def copy_file(source: str, destination: str) -> None:
+    shutil.copy(os.path.join(PROJECT_DIRECTORY, source), os.path.join(PROJECT_DIRECTORY, destination))
+
+
 if __name__ == "__main__":
     if "{{cookiecutter.include_github_actions}}" != "y":
         remove_dir(".github")
@@ -42,3 +46,10 @@ if __name__ == "__main__":
         if "{{cookiecutter.logging}}" == "none":
             remove_file("{{cookiecutter.project_slug}}/utils.py")
             remove_file("tests/test_utils.py")
+
+    if "{{cookiecutter.python_version}}" == "ALL":
+        copy_file(".devcontainer/Dockerfile-ubuntu", ".devcontainer/Dockerfile")
+    else:
+        copy_file(".devcontainer/Dockerfile-python", ".devcontainer/Dockerfile")
+    remove_file(".devcontainer/Dockerfile-ubuntu")
+    remove_file(".devcontainer/Dockerfile-python")
